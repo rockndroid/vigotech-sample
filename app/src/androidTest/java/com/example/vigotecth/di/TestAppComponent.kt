@@ -1,7 +1,7 @@
 package com.example.vigotecth.di
 
 import android.app.Application
-import com.example.vigotecth.ui.groups_list.LauncherActivityTest
+import com.example.vigotecth.ui.groups_list.LauncherActivityTestWithIdling
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -24,5 +24,5 @@ interface TestAppComponent: AppComponent {
         fun build(): AppComponent
     }
 
-    fun inject(groupsTest: LauncherActivityTest)
+    fun inject(groupsTest: LauncherActivityTestWithIdling)
 }
