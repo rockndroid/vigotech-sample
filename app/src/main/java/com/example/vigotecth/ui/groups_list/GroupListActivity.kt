@@ -13,6 +13,7 @@ import dagger.android.AndroidInjection
 import javax.inject.Inject
 import android.util.DisplayMetrics
 import android.view.View
+import com.example.vigotecth.ui.utils.DividerScrollElevationListener
 import com.example.vigotecth.ui.utils.SpacesItemDecoration
 
 class GroupsListActivity : AppCompatActivity() {
@@ -47,6 +48,7 @@ class GroupsListActivity : AppCompatActivity() {
             adapter = GroupListAdapter().also { groupsAdapter= it}
             layoutManager = GridLayoutManager(this@GroupsListActivity, 2)
             addItemDecoration(SpacesItemDecoration(recyclerItemPadding))
+            addOnScrollListener(DividerScrollElevationListener(binding.toolbar))
         }
     }
 
