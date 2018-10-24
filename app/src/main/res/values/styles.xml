@@ -9,7 +9,9 @@
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
         <item name="android:statusBarColor">#FAFAFA</item>
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
+
 
     <style name="AppTheme.Launcher"/>
 
