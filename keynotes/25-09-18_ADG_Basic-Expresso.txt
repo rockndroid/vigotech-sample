@@ -7,3 +7,6 @@
 [  ] 4. Mostrar LauncherActivityTest
 [  ] 5. Explicar código
 [  ] 6. Mostrar Cheatsheet
+[  ] 7. Explicar setup con dagger
+[  ] 8. Explicar IdlingResources
+[  ] 9. Mostrar LauncherActivityTestIdling y ejecutar
