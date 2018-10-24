@@ -8,6 +8,10 @@ apply plugin: 'kotlin-kapt'
 
 
 android {
+    dataBinding {
+        enabled = true
+    }
+
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.vigotecth"

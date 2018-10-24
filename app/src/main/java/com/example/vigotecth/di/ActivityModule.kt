@@ -1,6 +1,6 @@
 package com.example.vigotecth.di
 
-import com.example.vigotecth.ui.groups_list.MainActivity
+import com.example.vigotecth.ui.groups_list.GroupsListActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -9,5 +9,5 @@ abstract class ActivityModule {
 
     @ActivityScope
     @ContributesAndroidInjector()
-    abstract fun bindMainActivity(): MainActivity
+    abstract fun bindGroupsListActivity(): GroupsListActivity
 }
