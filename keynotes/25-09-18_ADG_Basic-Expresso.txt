@@ -1,0 +1,9 @@
+
+✅✅
+
+[  ] 1. Qué es Espresso
+[  ] 2. Espresso Test Recorder con assertion en Recycler al primer elemento
+[  ] 3. Ejecutar y que falle
+[  ] 4. Mostrar LauncherActivityTest
+[  ] 5. Explicar código
+[  ] 6. Mostrar Cheatsheet
