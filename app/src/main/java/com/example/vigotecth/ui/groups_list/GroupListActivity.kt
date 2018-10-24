@@ -12,6 +12,7 @@ import com.example.vigotecth.databinding.ActivityGroupsBinding
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 import android.util.DisplayMetrics
+import android.view.View
 import com.example.vigotecth.ui.utils.SpacesItemDecoration
 
 class GroupsListActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class GroupsListActivity : AppCompatActivity() {
     @Inject lateinit var groupListViewModelFactory: GroupListViewModelFactory
 
     private lateinit var groupsAdapter : GroupListAdapter
+    private lateinit var binding : ActivityGroupsBinding
 
     private val recyclerItemPadding by lazy {
         TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 8f, DisplayMetrics()).toInt()
@@ -28,7 +30,10 @@ class GroupsListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         DataBindingUtil.setContentView<ActivityGroupsBinding>(this, R.layout.activity_groups)
-            .also { setupRecycler(it) }
+            .also { binding ->
+                this.binding = binding
+                setupRecycler(binding)
+            }
 
         AndroidInjection.inject(this)
 
@@ -47,6 +52,8 @@ class GroupsListActivity : AppCompatActivity() {
 
     private fun initSubscribers(viewModel: GroupListViewModel) {
         viewModel.onGroupsReady().observe(this, Observer { groups ->
+            binding.recyclerGroups.visibility = View.VISIBLE
+            binding.progress.visibility = View.INVISIBLE
             groupsAdapter.submitGroups(groups)
         })
     }

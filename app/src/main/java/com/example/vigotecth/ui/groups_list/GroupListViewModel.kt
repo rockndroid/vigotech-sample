@@ -9,6 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 class GroupListViewModel
     constructor(private val api: VigoTechApi): ViewModel() {
@@ -34,6 +35,7 @@ class GroupListViewModel
     private fun requestGroups() =
         api.groups()
             .subscribeOn(Schedulers.io())
+            .delay(5, TimeUnit.SECONDS)
             .observeOn(AndroidSchedulers.mainThread())
 
 }

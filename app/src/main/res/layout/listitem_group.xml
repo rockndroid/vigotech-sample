@@ -7,7 +7,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/bg_group"
         android:padding="8dp"
         tools:layout_height="200dp"
         tools:layout_width="200dp"
