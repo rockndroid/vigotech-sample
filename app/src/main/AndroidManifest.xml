@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:name=".VigoTechApp"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.groups_list.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

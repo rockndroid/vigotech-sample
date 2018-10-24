@@ -1,11 +1,10 @@
-package com.example.vigotecth
+package com.example.vigotecth.ui.groups_list
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.example.vigotecth.ui.vm.GroupListViewModel
-import com.example.vigotecth.ui.vm.GroupListViewModelFactory
+import com.example.vigotecth.R
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 

@@ -1,4 +1,4 @@
-package com.example.vigotecth.ui.vm
+package com.example.vigotecth.ui.groups_list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

@@ -1,6 +1,6 @@
 package com.example.vigotecth.di
 
-import com.example.vigotecth.MainActivity
+import com.example.vigotecth.ui.groups_list.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
