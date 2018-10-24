@@ -8,10 +8,25 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarColor">#FAFAFA</item>
         <item name="android:statusBarColor">#FAFAFA</item>
         <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:textViewStyle">@style/Widget.TextView</item>
+        <item name="android:textAppearance">@style/TextAppearance.VigoTech</item>
     </style>
 
+    <style name="Widget"/>
+
+    <style name="Widget.TextView">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-light</item>
+    </style>
+
+    <style name="TextAppearance" parent="TextAppearance.AppCompat"/>
+    <style name="TextAppearance.VigoTech">
+        <item name="android:fontFamily">@font/product_sans</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
 
     <style name="AppTheme.Launcher"/>
 
