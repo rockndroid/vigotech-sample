@@ -7,6 +7,13 @@
 [  ] 4. Mostrar LauncherActivityTest
 [  ] 5. Explicar código
 [  ] 6. Mostrar Cheatsheet
+        -> https://android.github.io/android-test/downloads/espresso-cheat-sheet-2.1.0.pdf
 [  ] 7. Explicar setup con dagger
 [  ] 8. Explicar IdlingResources
 [  ] 9. Mostrar LauncherActivityTestIdling y ejecutar
+[  ] 10. Mostrar Popsy test en device
+[  ] 11. Mostrar Popsy test en firebase + A.S
+        -> Popsy - https://console.firebase.google.com/project/popsygae/testlab/histories/bh.ea46b0f1f4591dfb/matrices/6425452055864964508
+        -> VigoTech - https://console.firebase.google.com/project/popsygae-staging/testlab/histories/bh.c416586f411f5d49/matrices/7191406045100781507/executions/bs.bdc9c41bbcde2a3a/videos
+[  ] 12. Mostrar Popsy test en bitrise
+        -> https://app.bitrise.io/build/fd868f10f2d27b00
