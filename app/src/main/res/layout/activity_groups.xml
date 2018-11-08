@@ -35,7 +35,7 @@
             android:visibility="invisible"
             tools:listitem="@layout/listitem_group"
             android:paddingTop="?actionBarSize"
-            tools:visibility="gone"
+            tools:visibility="visible"
             />
 
         <ProgressBar
@@ -50,6 +50,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
