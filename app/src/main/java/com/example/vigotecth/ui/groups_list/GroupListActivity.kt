@@ -45,7 +45,7 @@ class GroupsListActivity : AppCompatActivity() {
 
     private fun setupRecycler(it: ActivityGroupsBinding) {
         with(it.recyclerGroups) {
-            adapter = GroupListAdapter().also { groupsAdapter= it}
+            adapter = GroupListAdapter().also { groupsAdapter = it}
             layoutManager = GridLayoutManager(this@GroupsListActivity, 2)
             addItemDecoration(SpacesItemDecoration(recyclerItemPadding))
             addOnScrollListener(DividerScrollElevationListener(binding.toolbar))
