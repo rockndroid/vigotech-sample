@@ -7,29 +7,31 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
 class ApiModule {
-    private companion object {
-        const val ENDPOINT = "https://vigotech-db.firebaseio.com/"
-    }
 
-    @Provides
-    fun provideApi(client: OkHttpClient): VigoTechApi {
-        return Retrofit.Builder()
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(ENDPOINT)
-            .client(client)
-            .build()
-            .create(VigoTechApi::class.java)
+  @Provides
+  fun provideApi(
+      client: OkHttpClient,
+      @Named("base_endpoint") endpoint: String
+  ): VigoTechApi {
 
-    }
+    return Retrofit.Builder()
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create())
+        .baseUrl(endpoint)
+        .client(client)
+        .build()
+        .create(VigoTechApi::class.java)
 
-    @Provides
-    @Singleton
-    fun provideApiClient(): OkHttpClient {
-        return OkHttpClient()
-    }
+  }
+
+  @Provides
+  @Singleton
+  fun provideApiClient(): OkHttpClient {
+    return OkHttpClient()
+  }
 }
