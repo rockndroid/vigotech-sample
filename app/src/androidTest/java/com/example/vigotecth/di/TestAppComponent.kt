@@ -22,7 +22,7 @@ interface TestAppComponent: AppComponent {
         @BindsInstance
         fun application(app: Application): Builder
 
-        fun build(): AppComponent
+        fun build(): TestAppComponent
     }
 
     fun inject(groupsTest: LauncherActivityTestWithIdling)

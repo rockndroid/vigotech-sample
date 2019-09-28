@@ -8,6 +8,8 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.vigotecth.R
+import com.example.vigotecth.server.MockDispatcher
+import okhttp3.mockwebserver.MockWebServer
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -17,6 +19,11 @@ class LauncherActivityTest {
 
     @Test
     fun groupsAreShown() {
+        MockWebServer().apply {
+            setDispatcher(MockDispatcher())
+            start(8080)
+        }
+
         ActivityScenario.launch(LauncherActivity::class.java)
 
         // Look for the 'check groups', and do click

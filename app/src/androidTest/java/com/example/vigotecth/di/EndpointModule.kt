@@ -10,6 +10,6 @@ class EndpointModule {
   @Provides
   @Named("base_endpoint")
   fun provideEndpoint(): String {
-    return "https://vigotech-db.firebaseio.com/"
+    return "http://localhost:8080/"
   }
 }
