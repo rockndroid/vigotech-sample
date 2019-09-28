@@ -35,7 +35,6 @@ class GroupListViewModel
     private fun requestGroups() =
         api.groups()
             .subscribeOn(Schedulers.io())
-            .delay(3, TimeUnit.SECONDS)
             .observeOn(AndroidSchedulers.mainThread())
 
 }

@@ -12,6 +12,7 @@ class GroupListViewModelFactory
 
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+        @Suppress("UNCHECKED_CAST")
         return GroupListViewModel(api) as T
     }
 }
