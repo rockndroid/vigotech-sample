@@ -1,16 +1,13 @@
 package com.example.vigotecth.ui.groups_list
 
-import androidx.test.core.app.ActivityScenario
-import androidx.test.espresso.IdlingRegistry
+import androidx.test.core.app.ActivityScenario.launch
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import com.example.vigotecth.robots.GroupsTestRobot
-import com.example.vigotecth.robots.ScreenRobot.Companion.withRobot
-import com.example.vigotecth.server.MockDispatcher
-import com.example.vigotecth.utils.EspressoIdlingResource
-import okhttp3.mockwebserver.MockWebServer
-import org.junit.After
-import org.junit.Before
+import com.example.vigotecth.R
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -18,41 +15,14 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class LauncherActivityTest {
 
-    lateinit var server: MockWebServer
-
-    @Before
-    fun registerIdlingResource() {
-        IdlingRegistry.getInstance().register(EspressoIdlingResource.countingIdlingResource)
-    }
-
-    @Before
-    fun startServer() {
-        server = MockWebServer().apply {
-            setDispatcher(MockDispatcher())
-            start(8080)
-        }
-    }
-
     @Test
     fun agileVigoIsShown() {
-        ActivityScenario.launch(LauncherActivity::class.java)
+        launch(LauncherActivity::class.java)
 
-        withRobot(GroupsTestRobot::class.java)
-            .goNextOnLauncher()
-            .verifyGroupIsShown("Agile Vigo")
-    }
+        onView(withId(R.id.btn_groups)).perform(click())
 
-    @Test
-    fun aIndustrosa() {
-        ActivityScenario.launch(LauncherActivity::class.java)
+        Thread.sleep(5_000)
 
-        withRobot(GroupsTestRobot::class.java)
-            .goNextOnLauncher()
-            .verifyGroupIsShown("A Industrosa")
-    }
-
-    @After
-    fun tearDown() {
-        server.shutdown()
+        onView(withText("Agile Vigo")).check(matches(isDisplayed()))
     }
 }
