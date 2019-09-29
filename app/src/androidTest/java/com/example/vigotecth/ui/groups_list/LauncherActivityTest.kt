@@ -9,6 +9,9 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.example.vigotecth.R
+import com.example.vigotecth.robots.GroupsTestRobot
+import com.example.vigotecth.robots.ScreenRobot
+import com.example.vigotecth.robots.ScreenRobot.Companion.withRobot
 import com.example.vigotecth.server.MockDispatcher
 import com.example.vigotecth.utils.EspressoIdlingResource
 import okhttp3.mockwebserver.MockWebServer
@@ -40,9 +43,18 @@ class LauncherActivityTest {
     fun agileVigoIsShown() {
         launch(LauncherActivity::class.java)
 
-        onView(withId(R.id.btn_groups)).perform(click())
+        withRobot(GroupsTestRobot::class.java)
+            .goNextOnLauncher()
+            .verifyGroupIsShown("Agile Vigo")
+    }
 
-        onView(withText("Agile Vigo")).check(matches(isDisplayed()))
+    @Test
+    fun aIndustrosaIsShown() {
+        launch(LauncherActivity::class.java)
+
+        withRobot(GroupsTestRobot::class.java)
+                .goNextOnLauncher()
+                .verifyGroupIsShown("A Industrosa")
     }
 
     @After
