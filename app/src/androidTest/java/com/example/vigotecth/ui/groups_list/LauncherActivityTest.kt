@@ -53,8 +53,8 @@ class LauncherActivityTest {
         launch(LauncherActivity::class.java)
 
         withRobot(GroupsTestRobot::class.java)
-                .goNextOnLauncher()
-                .verifyGroupIsShown("A Industrosa")
+            .goNextOnLauncher()
+            .verifyGroupIsShown("A Industrosa")
     }
 
     @After
